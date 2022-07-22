@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ titre }}</title>
+    </head>
+
+    <body>
+        <h1>{{ titre }}</h1>
+
+        <p>Please insert the format you want or choose a predefine one : </p>
+        <p>List of predefine fonctions :</p>
+        <p> - show  --> print the current date</p>
+        <p> - exit  --> end the programm</p>
+        <p> - reset --> change the time format to the default one</p>
+        <p> - set --> set the time of the computer (requires admin)")</p>
+        <!--<form action="/action_page.php">
+            <label for="fname">Format of the date you want :</label>
+            <input type="text" id="fname" name="formatDate"><br><br>
+        </form>-->
+
+        <form action="{{ url_for('date') }}" method="date">
+            <input type="text" id="formatUser" name="formatUser">
+            <button type="submit" placeholder="Format" name="buttonSendFormat">Send format</button>
+        </form>
+
+        <form action="{{ url_for('help') }}" method="help">
+            <p>If you need help about the format please press the button below !</p>
+            <button type="text">Help Me!</button>
+        </form>
+    </body>
+</html>
